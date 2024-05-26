@@ -25,7 +25,7 @@ def private_panel(_):
         ],
         
         [
-            InlineKeyboardButton(text="مـطـور الـسـورس", url= "https://t.me/Y_D_ll"),
+            InlineKeyboardButton(text="مـطـور الـسـورس 🌿 ", url= "https://t.me/Y_D_ll"),
             InlineKeyboardButton(text="جـروب الـدعـم 🌿 ", url=f"https://t.me/SOPER_EROR"), 
         ],
         [
