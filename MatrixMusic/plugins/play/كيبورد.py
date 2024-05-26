@@ -75,7 +75,7 @@ REPLY_MESSAGE_BUTTONS = [
         ("افاتار بنات")
     ],
     [
-        ("حـذف الـكـيـبـورد 🌿 ")
+        ("❎ ¦ حذف الكيبورد")
     ]
   
 ]
@@ -93,7 +93,7 @@ async def cpanel(_, message: Message):
               reply_markup=reply_markup
         )
 
-@app.on_message(filters.regex("حـذف الـكـيـبـورد 🌿 "))
+@app.on_message(filters.regex("❎ ¦ حذف الكيبورد"))
 async def down(client, message):
-          m = await message.reply("تم حذف الكيبورد بنجاح 🌿  ⋅ ", reply_markup= ReplyKeyboardRemove(selective=True))
+          m = await message.reply("❎ ¦ تم حذف الكيبورد بنجاح", reply_markup= ReplyKeyboardRemove(selective=True))
 
