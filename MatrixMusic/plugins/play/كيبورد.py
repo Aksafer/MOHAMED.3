@@ -1,7 +1,7 @@
 import asyncio
 from pyrogram import Client, filters
 from strings.filters import command
-from AdRenalen.utils.decorators import AdminActual
+from MatrixMusic.utils.decorators import AdminActual
 from pyrogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
@@ -11,7 +11,7 @@ from pyrogram.types import (
     InputMediaPhoto,
     Message,
 )
-from AdRenalen import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from MatrixMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 
 REPLY_MESSAGE = "🧑🏻‍✈️︙اهلا بك بك عزيزي العضو ♥️\n\n اليـكـ كـيب الاعـضاء الـخاص بــ سورس ايـرور"
