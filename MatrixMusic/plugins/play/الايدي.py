@@ -1,21 +1,22 @@
+import asyncio
+from asyncio import gather
+from pyrogram import Client, filters
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import os
 import time
 import aiohttp
-from random import choice    
 from pyrogram.types import CallbackQuery
 from pyrogram import filters
 from pyrogram import Client
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
-from MatrixMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from MatrixMusic import app
+from AdRenalen import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from AdRenalen import app
 from telegraph import upload_file
 from asyncio import gather
 from pyrogram.errors import FloodWait
-from asyncio import gather
-from pyrogram import Client, filters
-from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
 
 iddof = []
 id = {}
@@ -25,27 +26,27 @@ async def iddlock(client: Client, message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
         if message.chat.id in iddof:
-            return await message.reply_text("الامر معطل من قبل\n ✓")
+            return await message.reply_text("♪ الامر معطل من قبل .")
         iddof.append(message.chat.id)
-        return await message.reply_text("تم تعطيل الايدي بنجاح\n ✓")
+        return await message.reply_text("♪ تم تعطيل الايدي بنجاح .")
     else:
-        return await message.reply_text("عذرا عزيزي هذا الامر للادمن الجروب فقط\n ✓")
+        return await message.reply_text("♪ عذرا عزيزي هذا الامر للادمن الجروب فقط .")
 
 @app.on_message(filters.command(["فتح الايدي", "تفعيل الايدي"], "") & filters.group)
 async def iddopen(client: Client, message):
     get = await client.get_chat_member(message.chat.id, message.from_user.id)
     if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
         if message.chat.id not in iddof:
-            return await message.reply_text("♪الايدي مفعل من قبل\n ✓")
+            return await message.reply_text("♪ الايدي مفعل من قبل .")
         iddof.remove(message.chat.id)
-        return await message.reply_text("تم تفعيل الايدي بنجاح\n ✓")
+        return await message.reply_text("♪ تم تفعيل الايدي بنجاح .")
     else:
-        return await message.reply_text(" عذرا عزيزي هذا الامر للادمن الجروب فقط\n ✓")
+        return await message.reply_text("♪ عذرا عزيزي هذا الامر للادمن الجروب فقط .")
 
-@app.on_message(filters.command(["ا"], ""))
+@app.on_message(filters.command(["ايدي"], ""))
 async def muid(client: Client, message):
     if message.chat.id in iddof:
-        return await message.reply_text("♪ تم تعطيل امر الايدي من قبل المشرفين 💎 .")
+        return await message.reply_text("♪ تم تعطيل امر الايدي من قبل المشرفين .")
     
     user = await client.get_chat(message.from_user.id)
     user_id = user.id
@@ -66,8 +67,8 @@ async def muid(client: Client, message):
     
     idd = len(id[user.id])
     
-    caption = f" {choice(The_Stayle)} \n\n🧞‍♂️ ¦الاسم : {first_name}\n🎃 ¦الايدي : {user_id}\n🎯 ¦اليوزر : [@{username}]\n💌 ¦𝙱𝙸𝙾 : {bio}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} ❤️", callback_data=f"heart{user_id}")]])
+    caption = f"name : {first_name}\nid : {user_id}\nuser : [@{username}]\nbio : {bio}"
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} 🖤", callback_data=f"heart{user_id}")]])
     
     await message.reply_photo(photo=photo, caption=caption, reply_markup=reply_markup)
 
@@ -88,7 +89,7 @@ async def heart(client, query: CallbackQuery):
     
     idd = len(id[user.id])
     
-    caption = f" {choice(The_Stayle)} \n\n🧞‍♂️ ¦الاسم : {first_name}\n🎃 ¦الايدي : {user_id}\n🎯 ¦اليوزر : [@{username}]\n💌 ¦𝙱𝙸𝙾 : {bioo}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} ❤️", callback_data=f"heart{user_id}")]])
+    caption = f"name : {first_name}\nid : {user_id}\nuser : [@{username}]\nbio : {bioo}"
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} 🖤", callback_data=f"heart{user_id}")]])
     
     await query.edit_message_text(caption, reply_markup=reply_markup)
