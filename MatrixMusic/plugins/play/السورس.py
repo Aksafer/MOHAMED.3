@@ -58,7 +58,7 @@ async def huhh(client: Client, message: Message):
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/cec3ed930abf838dca18f.jpg",
-        caption=f"""• ⌯ Developer Name : ˛ 𝙼𝙰𝚉𝙴𝙽 ⌯ •\n- Devloper Username : @Y_D_ll Devloper id : 6092147148 ⋅""",
+        caption=f"""• ⌯ Developer Name : ˛ 𝙴𝚁𝙾𝚁 ⌯ •\n- Devloper Username : @Y_D_ll Devloper id : 6092147148 ⋅""",
         reply_markup=InlineKeyboardMarkup(
         [
             [
