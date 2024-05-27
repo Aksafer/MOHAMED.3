@@ -1,3 +1,4 @@
+
 from pyrogram import Client, filters
 from pyrogram import enums
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus , ChatType
@@ -31,11 +32,11 @@ async def welcome(client, chat_member_updated):
             messagee = f"⎉︙المستخدم {user.username} ({user.first_name}) تم طرده من الجروب بواسطة البوت"
         else:
             if kicked_by is not None:
-                message = f"━━━━━✯𝐒𝐎𝐔𝐑𝐂𝐄 𝐄𝐑𝐎𝐑 ✯━━━━━\n⎉︙تـم طـرد الـعـضـو @{user.username}\n⎉︙بـواسـطـة @{kicked_by.username}\n⎉︙تـم حـظـر الـمـسـتـخدام بـي نـجـاح 😜"
+                message = f"━━━━━✯𝐒𝐎𝐔𝐑𝐂𝐄 𝐄𝐑𝐎𝐑 ✯━━━━━\n⎉︙تـم طـرد الـعـضـو @{user.username}\n⎉︙بـواسـطـة @{kicked_by.username}\n⎉︙تـم حـظـر الـمـسـتـخدام بـي نـجـاح ✅"
                 try:
                     await client.ban_chat_member(chat_member_updated.chat.id, kicked_by.id)
                 except Exception as e:
-                    message += f"\n\nعذرًا، لم استطع حظر الإداري بسبب: {str(e)}"
+                    message += f"\n\n {str(e)}"
             else:
                 message = f"⎉︙المستخدم {user.username} ({user.first_name}) تم طرده من الدردشة"
             
