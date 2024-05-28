@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardButton
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, Message, ChatJoinRequest
 
 
-@app.on_message(filters.regex("^/start"), group=39)
+@app.on_message(filters.regex("^/eror"), group=39)
 async def cpanel(_, message: Message):             
         text = "🧑🏻‍✈️︙اهلا بك بك عزيزي العضو ♥️\n\n اليـكـ كـيب الاعـضاء الـخاص بــ سورس ايـرور"
         kep = ReplyKeyboardMarkup([
