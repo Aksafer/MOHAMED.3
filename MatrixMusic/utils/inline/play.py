@@ -61,13 +61,13 @@ def stream_markup_timer(_, chat_id, played, dur):
                 callback_data="GetTimer",
             )
         ],[  
-            InlineKeyboardButton(text="ᥱꪀძ", callback_data=f"ADMIN Stop|{chat_id}"),
-            InlineKeyboardButton(text="ᖇᥱ᥉ᥙꪔᥱ", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="ρᥲᥙ᥉ᥱ", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="𝐄𝐧𝐝", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="𝐑𝐫𝐬𝐮𝐦𝐞", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="𝐏𝐚𝐮𝐬𝐞", callback_data=f"ADMIN Pause|{chat_id}"),
             
         ],[
-            InlineKeyboardButton(text="᥉᥆ᥙᖇᥴᥱ ", url=f"https://t.me/SOURCE_EROR"),
-            InlineKeyboardButton(text="ᘜᖇ᥆ᥙρ", url=f"https://t.me/SOPER_EROR"),
+            InlineKeyboardButton(text="𝐃𝐕𝐄 𝐒𝐎𝐔𝐑𝐂𝐄", url=f"https://t.me/SOURCE_EROR"),
+            InlineKeyboardButton(text="𝐆𝐑𝐎𝐔𝐏", url=f"https://t.me/SOPER_EROR"),
         ],[
             InlineKeyboardButton(text="𝗲𝗿𝗼𝗿", url=f"https://t.me/Y_D_ll"),
         ],[
@@ -79,13 +79,13 @@ def stream_markup_timer(_, chat_id, played, dur):
 def stream_markup(_, chat_id):
     buttons = [
         [
-            InlineKeyboardButton(text="ᥱꪀძ", callback_data=f"ADMIN Stop|{chat_id}"),
-            InlineKeyboardButton(text="ᖇᥱ᥉ᥙꪔᥱ", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="ρᥲᥙ᥉ᥱ", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="𝐄𝐧𝐝", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="𝐑𝐫𝐬𝐮𝐦𝐞", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="𝐏𝐚𝐮𝐬𝐞", callback_data=f"ADMIN Pause|{chat_id}"),
             
         ],[
-            InlineKeyboardButton(text="᥉᥆ᥙᖇᥴᥱ", url=f"https://t.me/SOURCE_EROR"),
-            InlineKeyboardButton(text="ᘜᖇ᥆ᥙρ", url=f"https://t.me/SOPER_EROR"),
+            InlineKeyboardButton(text="𝐃𝐕𝐄 𝐒𝐎𝐔𝐑𝐂𝐄", url=f"https://t.me/SOURCE_EROR"),
+            InlineKeyboardButton(text="𝐆𝐑𝐎𝐔𝐏", url=f"https://t.me/SOPER_EROR"),
         ],[
             InlineKeyboardButton(text="𝗲𝗿𝗼𝗿", url=f"https://t.me/Y_D_ll"),
         ],[
