@@ -29,7 +29,7 @@
       },
       "HEROKU_API_KEY": {
         "description": "⦗ https://dashboard.heroku.com/account ⦘ ادخـل كود ايبـي كـي",
-        "value": "",
+        "value": "HRKU-ae27594b-6b0a-4ebb-b560-fa99515c0e6d",
         "required": false
       },
       "HEROKU_APP_NAME": {
@@ -39,7 +39,7 @@
       },
       "LOGGER_ID": {
         "description": "ايـدي قروب السـجل",
-        "value": "-100",
+        "value": "-1002078123495",
         "required": true
       }
     },
