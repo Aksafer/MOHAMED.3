@@ -9,7 +9,7 @@ from pyrogram.types import (InlineKeyboardButton,CallbackQuery,InlineKeyboardMar
 from MatrixMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 
-@app.on_message(filters.command(["بايو مزخرف","اسم مزخرف","✨زخارف"], ""))
+@app.on_message(filters.command(["بايوهات مزخرفه","اسماء مزخرفه","زخارف"], ""))
 async def abrag(c: Client, m: Message):
     global mid
     mid = m.id
