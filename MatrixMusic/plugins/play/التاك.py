@@ -1,76 +1,67 @@
 import asyncio
-import os
-import time
-import requests
-from pyrogram import enums
-import aiohttp
+from MatrixMusic import app
 from pyrogram import filters
-from pyrogram import Client
-from pyrogram.enums import ChatMemberStatus
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
-from MatrixMusic  import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from MatrixMusic  import app
-from telegraph import upload_file
-from asyncio import gather
-from pyrogram.errors import FloodWait
+from strings.filters import command
 
-array = []
-@app.on_message(filters.command(["@all", "تاك","all"], "") & ~filters.private, group=88)
-async def nummmm(client: app, message):
-  if message.chat.id in array:
-     return await message.reply_text("التاك قيد التشغيل الان 💘 ⋅")
-  chek = await client.get_chat_member(message.chat.id, message.from_user.id)
-  if not chek.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-    await message.reply("الامر دا للمشرفين بس 💘 ⋅")
-    return
-  await message.reply_text("جار بدء المنشن لايقاف التشغيل اكتب ⦗ ايقاف التاك ⦘ 💘 ⋅")
-  i = 0
-  txt = ""
-  zz = message.text
-  if message.photo:
-          photo_id = message.photo.file_id
-          photo = await client.download_media(photo_id)
-          zz = message.caption
-  try:
-   zz = zz.replace("@all","").replace("تاك","").replace("all","")
-  except:
-    pass
-  array.append(message.chat.id)
-  async for x in client.get_chat_members(message.chat.id):
-      if message.chat.id not in array:
+SPAM_CHATS = []
+
+
+@app.on_message(command(["/all", "تاك", "@all"]) & filters.group)
+async def tag_all_users(_, message):
+    replied = message.reply_to_message
+    if len(message.command) < 2 and not replied:
+        await message.reply_text("**قم بالرد على الرسالة أو افعل شيئًا ما أو اكتب برسالة الأمر **")
         return
-      if not x.user.is_deleted:
-       i += 1
-       txt += f" {x.user.mention} ›"
-       if i == 50:
+    if replied:
+        SPAM_CHATS.append(message.chat.id)
+        usernum = 0
+        usertxt = ""
+        async for m in app.get_chat_members(message.chat.id):
+            if message.chat.id not in SPAM_CHATS:
+                break
+            usernum += 5
+            usertxt += f"\n⊚ [{m.user.first_name}](tg://user?id={m.user.id})\n"
+            if usernum == 1:
+                await replied.reply_text(usertxt)
+                await asyncio.sleep(2)
+                usernum = 0
+                usertxt = ""
         try:
-              if not message.photo:
-                    await client.send_message(message.chat.id, f"{zz}\n{txt}")
-              else:
-                    await client.send_photo(message.chat.id, photo=photo, caption=f"{zz}\n{txt}")
-              i = 0
-              txt = ""
-              await asyncio.sleep(2)
-        except FloodWait as e:
-                    flood_time = int(e.x)
-                    if flood_time > 250:
-                        continue
-                    await asyncio.sleep(flood_time)
+            SPAM_CHATS.remove(message.chat.id)
         except Exception:
-              array.remove(message.chat.id)
-  array.remove(message.chat.id)
+            pass
+    else:
+        text = message.text.split(None, 1)[1]
+
+        SPAM_CHATS.append(message.chat.id)
+        usernum = 0
+        usertxt = ""
+        async for m in app.get_chat_members(message.chat.id):
+            if message.chat.id not in SPAM_CHATS:
+                break
+            usernum += 1
+            usertxt += f"\n⊚ [{m.user.first_name}](tg://user?id={m.user.id})\n"
+            if usernum == 5:
+                await app.send_message(message.chat.id, f'{text}\n{usertxt}')
+                await asyncio.sleep(2)
+                usernum = 0
+                usertxt = ""
+        try:
+            SPAM_CHATS.remove(message.chat.id)
+        except Exception:
+            pass
 
 
-@app.on_message(filters.command(["ايقاف المنشن","تعطيل المنشن","/cancel", "ايقاف التاك"], ""), group=822)
-async def stop(client, message):
-  chek = await client.get_chat_member(message.chat.id, message.from_user.id)
-  if not chek.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-    await message.reply("الامر دا للمشرفين بس 💘 ⋅")
-    return
-  if message.chat.id not in array:
-     await message.reply("المنشن متوقف يصحبي 💘 ⋅")
-     return 
-  if message.chat.id in array:
-    array.remove(message.chat.id)
-    await message.reply("تم ايقاف المنشن يزميلي 💘 ⋅")
-    return
+@app.on_message(command(["/cancel", "بس تاك","ايقاف التاك"]) & ~filters.private)
+async def cancelcmd(_, message):
+    chat_id = message.chat.id
+    if chat_id in SPAM_CHATS:
+        try:
+            SPAM_CHATS.remove(chat_id)
+        except Exception:
+            pass
+        return await message.reply_text("**تم ايقاف التاك**")
+
+    else:
+        await message.reply_text("**لا توجد عمليه في وصع علامه**")
+        return       
