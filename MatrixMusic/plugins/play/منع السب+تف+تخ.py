@@ -28,7 +28,7 @@ def jabwa(c, m):
     return m.reply("• لا يمكنك التف علي المطور ❤️✌️")
   if id == ID_BOT:
     return m.reply("• عاوزني اتف علي نفسي يعبيط 😂")
-  if id == Y_D_ll:
+  if id == DEVELOPERS:
     return m.reply("• لا يمكنك التف علي مطورين السورس 🧑‍✈️")
   Text =f"""
 • تم التف علي هذا الشخص
@@ -38,7 +38,7 @@ def jabwa(c, m):
  اععع اي القرف ده 🤢
 """
   JABWA = InlineKeyboardMarkup([[InlineKeyboardButton("اضف البوت الي مجموعتك او قناتك 🎸", url=f"https://t.me/{app.username}?startgroup=true"),]])
-  m.reply_animation("https://telegra.ph/file/68acd588992deb48cdd7d.mp4",caption=Text,reply_markup=JABWA)
+  m.reply_animation("https://t.me/DEVSOLiVEA/13",caption=Text,reply_markup=JABWA)
 
 @app.on_message(filters.command("تخ", "") & filters.group & filters.reply)
 def jabwa(c, m):
@@ -49,7 +49,7 @@ def jabwa(c, m):
     return m.reply("• لا يمكنك قتل المطور ❤️✌️")
   if id == ID_BOT:
     return m.reply("• عاوزني اقتل نفسي 😂")
-  if id == Y_D_ll:
+  if id == DEVELOPERS:
     return m.reply("• لا يمكنك قتل مطورين السورس 🧑‍✈️")
   Text =f"""
 • تم قتل هذا الشخص
@@ -59,7 +59,7 @@ def jabwa(c, m):
  ان لله وان اليه راجعون ⚰😭
 """
   JABWA = InlineKeyboardMarkup([[InlineKeyboardButton("اضف البوت الي مجموعتك او قناتك 🎸", url=f"https://t.me/{app.username}?startgroup=true"),]])
-  m.reply_animation("https://telegra.ph/file/069d4cd7b1a4108d03d2f.mp4",caption=Text,reply_markup=JABWA)
+  m.reply_animation("https://t.me/DEVSOLiVEA/14",caption=Text,reply_markup=JABWA)
 
 @app.on_message(filters.command("قفل الدردشه", "") & filters.group)
 def of_chat(c, m):
