@@ -5,7 +5,6 @@ from MatrixMusic import app
 from config import OWNER_ID
 from MatrixMusic.misc import SUDOERS
 from pyrogram.types import Message
-from MatrixMusic.utils.database import add_served_chat, delete_served_chat
 from MatrixMusic.utils.alina_ban import admin_filter, sudo_filter
 from pyrogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 from strings.filters import command
