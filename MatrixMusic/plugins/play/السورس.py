@@ -32,14 +32,14 @@ from pyrogram.errors import FloodWait
 async def huhh(client: Client, message: Message):
     await message.reply_video(
         video=f"https://t.me/llle_rus/2",
-        caption=f"""• [⌯𝐃𝐄𝐕.𝐒𝐎𝐔𝐑𝐂𝐄⌯](https://t.me/Y_D_ll) •\n
+        caption=f"""• [⌯𝐃𝐄𝐕 𝐒𝐎𝐔𝐑𝐂𝐄⌯](https://t.me/Y_D_ll) •\n
  [⌯𝐒𝐎𝐔𝐑𝐂𝐄 𝐄𝐑𝐎𝐑⌯](https://t.me/SOURCE_EROR)\n
- [⌯𝐒𝐔𝐏𝐏𝐔𝐑𝐓.𝐒𝐎𝐔𝐑𝐂𝐄⌯](https://t.me/SOPER_EROR)\n""",
+ [⌯𝐒𝐔𝐏𝐏𝐔𝐑𝐓 𝐒𝐎𝐔𝐑𝐂𝐄⌯](https://t.me/SOPER_EROR)\n""",
         reply_markup=InlineKeyboardMarkup(
         [
             [
                     InlineKeyboardButton(
-                        "‹ 𝐃𝐄𝐕.𝐒𝐎𝐔𝐑𝐂𝐄 › ", url=f"https://t.me/Y_D_ll"),
+                        "‹ 𝐃𝐄𝐕 𝐒𝐎𝐔𝐑𝐂𝐄 › ", url=f"https://t.me/Y_D_ll"),
                 ],[
                     InlineKeyboardButton(
                         "‹ 𝐒𝐎𝐔𝐑𝐂𝐄 ›", url=f"https://t.me/SOURCE_EROR"), 
