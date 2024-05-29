@@ -6,14 +6,14 @@ import aiohttp
 from pyrogram import filters
 from pyrogram import Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
-from MatrixMusic import (Apple, Resso, Spotify, Telegram, YouTube, app)
+from MatrixMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from MatrixMusic import app
 
 
 
 
 ########################### بوت حذف
-@app.on_message(filters.command(["بوت حذف", "عاوز احذف"], ""))
+@app.on_message(filters.command(["حذف", "عاوز احذف", "عاوزه احذف"], ""))
 async def svksksa(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph//file/a6137caa707bdb1247d7c.jpg",
@@ -27,6 +27,3 @@ async def svksksa(client: Client, message: Message):
            ]
         ),
     )
-   
-   
- 
