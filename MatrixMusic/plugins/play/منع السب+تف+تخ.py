@@ -38,7 +38,7 @@ def jabwa(c, m):
  اععع اي القرف ده 🤢
 """
   JABWA = InlineKeyboardMarkup([[InlineKeyboardButton("اضف البوت الي مجموعتك او قناتك 🎸", url=f"https://t.me/{app.username}?startgroup=true"),]])
-  m.reply_animation("JOPMN/13",caption=Text,reply_markup=JABWA)
+  m.reply_animation("JOPMN",caption=Text,reply_markup=JABWA)
 
 @app.on_message(filters.command("تخ", "") & filters.group & filters.reply)
 def jabwa(c, m):
@@ -59,7 +59,7 @@ def jabwa(c, m):
  ان لله وان اليه راجعون ⚰😭
 """
   JABWA = InlineKeyboardMarkup([[InlineKeyboardButton("اضف البوت الي مجموعتك او قناتك 🎸", url=f"https://t.me/{app.username}?startgroup=true"),]])
-  m.reply_animation("JOPENM/14",caption=Text,reply_markup=JABWA)
+  m.reply_animation("JOPENM",caption=Text,reply_markup=JABWA)
 
 @app.on_message(filters.command("قفل الدردشه", "") & filters.group)
 def of_chat(c, m):
