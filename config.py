@@ -110,7 +110,6 @@ SPOTIFY_ARTIST_IMG_URL = "https://graph.org/file/774380facd73524f27d26.jpg"
 SPOTIFY_ALBUM_IMG_URL = "https://graph.org/file/774380facd73524f27d26.jpg"
 SPOTIFY_PLAYLIST_IMG_URL = "https://graph.org/file/774380facd73524f27d26.jpg"
 
-
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
